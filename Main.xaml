@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="850.4,2488" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:sd2="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:um="clr-namespace:UiPath.Mail;assembly=UiPath.Mail.Activities" xmlns:umab="clr-namespace:UiPath.Mail.Activities.Business;assembly=UiPath.Mail.Activities" xmlns:umabh="clr-namespace:UiPath.Mail.Activities.Business.HtmlEditor;assembly=UiPath.Mail.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="906.4,3081.6" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:sd2="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:um="clr-namespace:UiPath.Mail;assembly=UiPath.Mail.Activities" xmlns:umab="clr-namespace:UiPath.Mail.Activities.Business;assembly=UiPath.Mail.Activities" xmlns:umabh="clr-namespace:UiPath.Mail.Activities.Business.HtmlEditor;assembly=UiPath.Mail.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -128,7 +128,7 @@
       <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="804.8,774.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="916.8,3016.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd2:DataTable" Name="dt_Gold_Rate_Site1" />
       <Variable x:TypeArguments="sd2:DataTable" Name="dt_Gold_Rate_Site2" />
@@ -138,12 +138,20 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="835.2,2726.4" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="854.4,2716.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Variables>
         <Variable x:TypeArguments="x:String" Name="MixedWithGold" />
         <Variable x:TypeArguments="x:String" Name="PureGold" />
-        <Variable x:TypeArguments="x:String" Default="subtlepeace@gmail.com" Name="Email_ID1" />
-        <Variable x:TypeArguments="x:String" Default="nkmercurial10@gmail.com;nkhedkar369@gmail.com" Name="Email_ID2" />
+        <Variable x:TypeArguments="x:String" Name="Email_ID1">
+          <Variable.Default>
+            <Literal x:TypeArguments="x:String">Email</Literal>
+          </Variable.Default>
+        </Variable>
+        <Variable x:TypeArguments="x:String" Name="Email_ID2">
+          <Variable.Default>
+            <Literal x:TypeArguments="x:String">Email</Literal>
+          </Variable.Default>
+        </Variable>
       </TryCatch.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -152,33 +160,33 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Use Browser Edge: Gold Rate in UAE Today - Live Gold Price in Dirhams (AED)" sap:VirtualizedContainerService.HintSize="798.4,2495.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" InteractionMode="DebuggerApi" ScopeGuid="bae1746c-2ff1-42b5-865a-a0239122681f" Version="V2" WindowResize="Maximize">
+        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Use Browser Edge: Gold Rate in UAE Today - Live Gold Price in Dirhams (AED)" sap:VirtualizedContainerService.HintSize="817.6,2445.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" InteractionMode="DebuggerApi" ScopeGuid="bae1746c-2ff1-42b5-865a-a0239122681f" Version="V2" WindowResize="Maximize">
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="764.8,2238.4" sap2010:WorkflowViewState.IdRef="Sequence_23">
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="784,2228.8" sap2010:WorkflowViewState.IdRef="Sequence_23">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="702.4,2123.2" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="721.6,2140.8" sap2010:WorkflowViewState.IdRef="Sequence_22">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="a4b98c90-7473-43e1-aaa5-a2b9eb9ddb7c" DisplayName="Gold rate extraction from site" sap:VirtualizedContainerService.HintSize="640,2008" sap2010:WorkflowViewState.IdRef="CVScope_1" SendOnPremData="False" Version="V6">
+                  <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" ScrollOffset="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="a4b98c90-7473-43e1-aaa5-a2b9eb9ddb7c" DisplayName="Gold rate extraction from site" sap:VirtualizedContainerService.HintSize="659.2,2025.6" sap2010:WorkflowViewState.IdRef="CVScope_1" SendOnPremData="False" Version="V6">
                     <p:CVScope.Body>
                       <ActivityAction x:TypeArguments="x:Object">
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
                         </ActivityAction.Argument>
                         <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_8">
-                          <p:CvGetTextWithDescriptor DelayScreenshotAfterScroll="{x:Null}" Descriptor="[&quot;Target: AnyText (226,145,116,30)&quot; +&#xA;&quot;Anchor: Text '24kt Price' (226,110,74,14)&quot;]" DesignTimeCacheId="a4b98c90-7473-43e1-aaa5-a2b9eb9ddb7c" DesignTimeScaleFactor="1.25" DisplayName="24 Carat" sap:VirtualizedContainerService.HintSize="606.4,221.6" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_1" InformativeScreenshot="62cb7ba6df4db56455065599d3b7e28d" NumberOfScrolls="2" RefreshBefore="True" Result="[PureGold]" ScrollDirection="None" Version="V6">
+                          <p:CvGetTextWithDescriptor DelayScreenshotAfterScroll="{x:Null}" ScrollOffset="{x:Null}" Descriptor="[&quot;Target: AnyText (226,145,116,30)&quot; +&#xA;&quot;Anchor: Text '24kt Price' (226,110,74,14)&quot;]" DesignTimeCacheId="a4b98c90-7473-43e1-aaa5-a2b9eb9ddb7c" DesignTimeScaleFactor="1.25" DisplayName="24 Carat" sap:VirtualizedContainerService.HintSize="625.6,261.6" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_1" InformativeScreenshot="62cb7ba6df4db56455065599d3b7e28d" NumberOfScrolls="2" RefreshBefore="True" Result="[PureGold]" ScrollDirection="None" Version="V6">
                             <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
                               <uc:CvDescriptor Id="481e405e-b509-443a-a88c-790b5450eb6c">
                                 <uc:CvDescriptor.Anchors>
@@ -192,7 +200,7 @@
                               </uc:CvDescriptor>
                             </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
                           </p:CvGetTextWithDescriptor>
-                          <p:CvGetTextWithDescriptor DelayScreenshotAfterScroll="{x:Null}" Descriptor="[&quot;Target: AnyText (21,145,116,30)&quot; +&#xA;&quot;Anchor: Text '22kt Price' (21,110,73,14)&quot;]" DesignTimeCacheId="a4b98c90-7473-43e1-aaa5-a2b9eb9ddb7c" DesignTimeScaleFactor="1.25" DisplayName="22 Carat" sap:VirtualizedContainerService.HintSize="606.4,221.6" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_3" InformativeScreenshot="7c535f2df7d997793f0fc48809c215f0" NumberOfScrolls="2" RefreshBefore="True" Result="[MixedWithGold]" ScrollDirection="None" Version="V6">
+                          <p:CvGetTextWithDescriptor DelayScreenshotAfterScroll="{x:Null}" ScrollOffset="{x:Null}" Descriptor="[&quot;Target: AnyText (21,145,116,30)&quot; +&#xA;&quot;Anchor: Text '22kt Price' (21,110,73,14)&quot;]" DesignTimeCacheId="a4b98c90-7473-43e1-aaa5-a2b9eb9ddb7c" DesignTimeScaleFactor="1.25" DisplayName="22 Carat" sap:VirtualizedContainerService.HintSize="625.6,261.6" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_3" InformativeScreenshot="7c535f2df7d997793f0fc48809c215f0" NumberOfScrolls="2" RefreshBefore="True" Result="[MixedWithGold]" ScrollDirection="None" Version="V6">
                             <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
                               <uc:CvDescriptor Id="f99ec7f2-6408-48ab-b4c4-4dc54ca29766">
                                 <uc:CvDescriptor.Anchors>
@@ -206,37 +214,37 @@
                               </uc:CvDescriptor>
                             </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
                           </p:CvGetTextWithDescriptor>
-                          <If sap2010:Annotation.AnnotationText="Converting the text extracted to integer to comapare it with the lowest price " Condition="[Cint(PureGold) &lt;= 236 OR Cint(MixedWithGold) &lt;= 220]" sap:VirtualizedContainerService.HintSize="606.4,1144" sap2010:WorkflowViewState.IdRef="If_6">
+                          <If sap2010:Annotation.AnnotationText="Converting the text extracted to integer to comapare it with the lowest price " Condition="[Cint(PureGold) &lt;= 236 OR Cint(MixedWithGold) &lt;= 220]" sap:VirtualizedContainerService.HintSize="625.6,1160" sap2010:WorkflowViewState.IdRef="If_6">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <If.Then>
-                              <Sequence sap:VirtualizedContainerService.HintSize="572.8,754.4" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="592,772" sap2010:WorkflowViewState.IdRef="Sequence_20">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <umab:GmailApplicationCard ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Account="nkhedkar369@gmail.com" DisplayName="Sending mail using Gmail" EmailAddress="nkhedkar369@gmail.com" sap:VirtualizedContainerService.HintSize="529.6,664.8" sap2010:WorkflowViewState.IdRef="GmailApplicationCard_3" Timeout="90" UseConnectionService="False">
+                                <umab:GmailApplicationCard ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Account="nkhedkar369@gmail.com" DisplayName="Sending mail using Gmail" EmailAddress="nkhedkar369@gmail.com" sap:VirtualizedContainerService.HintSize="529.6,685.6" sap2010:WorkflowViewState.IdRef="GmailApplicationCard_3" Timeout="90" UseConnectionService="False">
                                   <umab:GmailApplicationCard.Body>
                                     <ActivityAction x:TypeArguments="um:IMailQuickHandle">
                                       <ActivityAction.Argument>
                                         <DelegateInArgument x:TypeArguments="um:IMailQuickHandle" Name="Gmail" />
                                       </ActivityAction.Argument>
-                                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,481.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,479.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <umab:SendMailX Bcc="{x:Null}" Body="{x:Null}" HtmlBodyFromText="{x:Null}" ReplyTo="{x:Null}" Account="[Gmail]" Cc="[Email_ID2]" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="433.6,369.6" sap2010:WorkflowViewState.IdRef="SendMailX_1" Importance="Normal" IsDraft="False" MaxBodyDocumentSizeMB="2" Sensitivity="Normal" Subject="Gold Rate" To="[Email_ID1]" UseDocumentAsBody="False">
+                                        <umab:SendMailX Bcc="{x:Null}" Body="{x:Null}" HtmlBodyFromText="{x:Null}" ReplyTo="{x:Null}" Account="[Gmail]" Cc="[Email_ID2]" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="433.6,392.8" sap2010:WorkflowViewState.IdRef="SendMailX_1" Importance="Normal" IsDraft="False" MaxBodyDocumentSizeMB="2" Sensitivity="Normal" Subject="Gold Rate" To="[Email_ID1]" UseDocumentAsBody="False">
                                           <umab:SendMailX.Files>
                                             <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                                           </umab:SendMailX.Files>
                                           <umab:SendMailX.HtmlBodyFromFile>
-                                            <umabh:HtmlContentArgument FilePath=".data/HtmlContent0.html">
+                                            <umabh:HtmlContentArgument HtmlBody="{x:Null}" FilePath=".data/HtmlContent0.html">
                                               <umabh:HtmlContentArgument.RuntimeImages>
                                                 <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
                                               </umabh:HtmlContentArgument.RuntimeImages>
@@ -266,13 +274,13 @@
                               </Sequence>
                             </If.Then>
                             <If.Else>
-                              <Sequence sap:VirtualizedContainerService.HintSize="376.8,175.2" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,195.2" sap2010:WorkflowViewState.IdRef="Sequence_21">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[&quot;Please wait for the price drop&quot;]" />
+                                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="353.6,108.8" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[&quot;Please wait for the price drop&quot;]" />
                               </Sequence>
                             </If.Else>
                           </If>
@@ -492,7 +500,7 @@
         </uix:NApplicationCard>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="801.6,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="820.8,23.2" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -517,10 +525,10 @@
                     </sap:WorkflowViewStateService.ViewState>
                     <uix:NGetText DisplayName="Get Text '22kt Price'" sap:VirtualizedContainerService.HintSize="606.4,157.6" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="c4c96a22-7f36-4ff7-9d70-21441e3fa330" TextString="[MixedWithGold]" Version="V3">
                       <uix:NGetText.Target>
-                        <uix:TargetAnchorable BrowserURL="https://goldrate.com/gold-rate-uae/" CvTextArea="131, 712, 146, 40" CvType="AnyWordGroup" DesignTimeRectangle="134, 704, 145, 56" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'225.75'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;ul&amp;gt;li&amp;gt;strong&amp;gt;p&amp;gt;strong' isleaf='1' parentid='main' tag='STRONG' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' isleaf='1' parentid='main' tag='STRONG' class='' /&gt;" Guid="e3e77945-0ceb-4d5d-822d-608b6c956b9a" InformativeScreenshot="7913cd360179deb7b5d19ab213aa9d4a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Gold Rate in UAE Today - Live Gold Price in Dirhams (AED)' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable BrowserURL="https://goldrate.com/gold-rate-uae/" CvTextArea="131, 712, 146, 40" CvType="AnyWordGroup" DesignTimeRectangle="134, 704, 145, 56" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;ul&amp;gt;li&amp;gt;strong&amp;gt;p&amp;gt;strong' isleaf='1' parentid='main' tag='STRONG' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' isleaf='1' parentid='main' tag='STRONG' class='' /&gt;" Guid="e3e77945-0ceb-4d5d-822d-608b6c956b9a" InformativeScreenshot="7913cd360179deb7b5d19ab213aa9d4a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Gold Rate in UAE Today - Live Gold Price in Dirhams (AED)' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
                           <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
-                              <uix:Target CvTextArea="131, 670, 94, 18" CvTextArgument="22kt Price" CvType="Text" DesignTimeRectangle="134, 667, 90, 24" ElementType="Text" FriendlyName="'22kt Price'" FullSelectorArgument="&lt;webctrl parentid='main' tag='STRONG' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='main' tag='STRONG' type='' class='' aaname='22kt Price' check:innerText='22kt Price' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF4AAAAcCAYAAADoQggJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAASqSURBVGhD7Zjxa9paFMff394fhClrSxAZ0jrqQ2knDa9V2qE0VQItYmtH657yZJPiiuy5oryUWany3bnJiSYxsdo3l/2QL1xob07uPffjveecmz8QyBcF4H1SAN4nBeB9UgDeJwXgfVIA3icF4H2SC/ghOpcniEdTWHuV1FsoegC5+i8/d6jfhLInIxQxbNciKcT2ztB84OemOiok8Xzvmjt+lq6RZD9tjfxYf5uH8k+f7RZU5wwxsRYpj5tH7luBHOA1VPd3dcfD2ydQLq9QOVeRfGMsRip8YTvWHTsZySBZuECF7JVDGWHRt3mMqhX+kuBv9he1ZfBSzvCXm1rIIyZRPz1bP2xgwNbPqnli+B/JofLLwDfyCAvocgNP3KVr/AVHAj45cz5x5h7KtuiToXRH3GdIq+YQEgt+f8s9pKXAd4z5lgH/RqW3HBo2IUfp2atdZC2uPKvHPrQh/70i2cDX/xLhhUB+4w6L2vmMvnvSNe7olxGj/0P0I81ozDDiZ+hy13Lg+f3/C55k+i2duj31Twsn19aRCEEpvHPhPKPHCyQEjO0yetzlBV5rFiHR0Q7vlNEeU4g53J3mC0uTCl7g5oPvFBi8+T77ka6N0KsVKZfxHDEVbd3AY7xxH/XSMWIbbE8ttJWH2tbYwNDT1yvIby1r2JCRvuzYIwhpMfDjz8gKB22hxlta+UCf9LlQ83RLfcLBrTMdupDW/ohKKaeHvDXKM2bMvrn7bhjMaB54DlnWDcN+hOMZhDdlyCXOC5/u2cBtvA6ULTGOJfddliFv02bcpCTMYWlQo1At1iNNx1X2jR8+THnGqgXAj6bHNe9Irm56IMfFrtig5DQvud4x9DjtNIY+kcfpcJcLKIrRPfoBsztGZRamcSb70hw7coBzZ+Wla3a8QSWnj7N+9Jl7TI3wNOT8Nm7g3Sa9Fy2i5VhPtyTT+/YQ/gz4Ebpl3n1ugJx6aCIbJ1vaYckP9iNohTloTaG33JLYS8C7tcguEoUmela/eezwDERTTvBcRAhw8ypTKkxEQeEaEnnOmGqeqrng7dBdAVllhV518dCEOWkZHN3Zq6GJXgI+VkS9f4+e2f7zCE089uI5g8KsKEsl2sn6/+7qqWJXi3V5N+ucHuB/MnQhE2bqAp2GkVBFfKy7naKXgLfF5DlaEfgB57XEueXHdzTtcbrRXMBTTFcPloBOsS1GtvOgCzlgah+O9Tls8dfUbwV+wVDTKurr8R7XLgd4gn7KRyZenL32O0WJNK3fDlNIlD0+KZiagUlzTUo9R9L+rcBTcuQwMptch+h9M3+NW6Pyc97YdY0weLCHPgt4C/ToMZQql1mOVjdvqRPolDTeX6HqYlu5vp2tJmwwNVT3ROXhTMZ0ikRlRMkxTWWZsi/rR9hdqwev39z1UEondKcIVazN/JQibu5mtWJWapZPKJVSEYm4WKPIaWxHsoD/iLR4SUw6rzG47qmxW+c3msz03msXm4siZ63JVvv7BNJrYxzxkS5b8zrnvwC8kLhAFXJYZ5+Mj3B0z/jqiMVdKmNTmekF6nUKsT+LM3YeyTXQqhWA90kBeJ8UgPdJAXifFID3RcAPx0wWLRR0Qg8AAAAASUVORK5CYII=" SearchSteps="FuzzySelector, CV" />
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CvTextArea="131, 670, 94, 18" CvTextArgument="22kt Price" CvType="Text" DesignTimeRectangle="134, 667, 90, 24" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='main' tag='STRONG' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='main' tag='STRONG' type='' class='' aaname='22kt Price' check:innerText='22kt Price' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF4AAAAcCAYAAADoQggJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAASqSURBVGhD7Zjxa9paFMff394fhClrSxAZ0jrqQ2knDa9V2qE0VQItYmtH657yZJPiiuy5oryUWany3bnJiSYxsdo3l/2QL1xob07uPffjveecmz8QyBcF4H1SAN4nBeB9UgDeJwXgfVIA3icF4H2SC/ghOpcniEdTWHuV1FsoegC5+i8/d6jfhLInIxQxbNciKcT2ztB84OemOiok8Xzvmjt+lq6RZD9tjfxYf5uH8k+f7RZU5wwxsRYpj5tH7luBHOA1VPd3dcfD2ydQLq9QOVeRfGMsRip8YTvWHTsZySBZuECF7JVDGWHRt3mMqhX+kuBv9he1ZfBSzvCXm1rIIyZRPz1bP2xgwNbPqnli+B/JofLLwDfyCAvocgNP3KVr/AVHAj45cz5x5h7KtuiToXRH3GdIq+YQEgt+f8s9pKXAd4z5lgH/RqW3HBo2IUfp2atdZC2uPKvHPrQh/70i2cDX/xLhhUB+4w6L2vmMvnvSNe7olxGj/0P0I81ozDDiZ+hy13Lg+f3/C55k+i2duj31Twsn19aRCEEpvHPhPKPHCyQEjO0yetzlBV5rFiHR0Q7vlNEeU4g53J3mC0uTCl7g5oPvFBi8+T77ka6N0KsVKZfxHDEVbd3AY7xxH/XSMWIbbE8ttJWH2tbYwNDT1yvIby1r2JCRvuzYIwhpMfDjz8gKB22hxlta+UCf9LlQ83RLfcLBrTMdupDW/ohKKaeHvDXKM2bMvrn7bhjMaB54DlnWDcN+hOMZhDdlyCXOC5/u2cBtvA6ULTGOJfddliFv02bcpCTMYWlQo1At1iNNx1X2jR8+THnGqgXAj6bHNe9Irm56IMfFrtig5DQvud4x9DjtNIY+kcfpcJcLKIrRPfoBsztGZRamcSb70hw7coBzZ+Wla3a8QSWnj7N+9Jl7TI3wNOT8Nm7g3Sa9Fy2i5VhPtyTT+/YQ/gz4Ebpl3n1ugJx6aCIbJ1vaYckP9iNohTloTaG33JLYS8C7tcguEoUmela/eezwDERTTvBcRAhw8ypTKkxEQeEaEnnOmGqeqrng7dBdAVllhV518dCEOWkZHN3Zq6GJXgI+VkS9f4+e2f7zCE089uI5g8KsKEsl2sn6/+7qqWJXi3V5N+ucHuB/MnQhE2bqAp2GkVBFfKy7naKXgLfF5DlaEfgB57XEueXHdzTtcbrRXMBTTFcPloBOsS1GtvOgCzlgah+O9Tls8dfUbwV+wVDTKurr8R7XLgd4gn7KRyZenL32O0WJNK3fDlNIlD0+KZiagUlzTUo9R9L+rcBTcuQwMptch+h9M3+NW6Pyc97YdY0weLCHPgt4C/ToMZQql1mOVjdvqRPolDTeX6HqYlu5vp2tJmwwNVT3ROXhTMZ0ikRlRMkxTWWZsi/rR9hdqwev39z1UEondKcIVazN/JQibu5mtWJWapZPKJVSEYm4WKPIaWxHsoD/iLR4SUw6rzG47qmxW+c3msz03msXm4siZ63JVvv7BNJrYxzxkS5b8zrnvwC8kLhAFXJYZ5+Mj3B0z/jqiMVdKmNTmekF6nUKsT+LM3YeyTXQqhWA90kBeJ8UgPdJAXifFID3RcAPx0wWLRR0Qg8AAAAASUVORK5CYII=" SearchSteps="FuzzySelector, CV" />
                             </scg:List>
                           </uix:TargetAnchorable.Anchors>
                         </uix:TargetAnchorable>
@@ -528,10 +536,10 @@
                     </uix:NGetText>
                     <uix:NGetText DisplayName="Get Text '24kt Price'" sap:VirtualizedContainerService.HintSize="606.4,157.6" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="c4c96a22-7f36-4ff7-9d70-21441e3fa330" TextString="[PureGold]" Version="V3">
                       <uix:NGetText.Target>
-                        <uix:TargetAnchorable BrowserURL="https://goldrate.com/gold-rate-uae/" CvTextArea="390, 713, 143, 38" CvType="AnyWordGroup" DesignTimeRectangle="391, 704, 145, 56" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'243.75'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;ul&amp;gt;li&amp;gt;strong&amp;gt;p&amp;gt;strong' idx='2' isleaf='1' parentid='main' tag='STRONG' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='' isleaf='1' parentid='main' tag='STRONG' /&gt;" Guid="423b4d37-82b6-4c00-a7c2-9964a2e97435" InformativeScreenshot="7335eb837ebfeb87c1d19b3e041ebb10.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Gold Rate in UAE Today - Live Gold Price in Dirhams (AED)' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable BrowserURL="https://goldrate.com/gold-rate-uae/" CvTextArea="390, 713, 143, 38" CvType="AnyWordGroup" DesignTimeRectangle="391, 704, 145, 56" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;ul&amp;gt;li&amp;gt;strong&amp;gt;p&amp;gt;strong' idx='2' isleaf='1' parentid='main' tag='STRONG' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='' isleaf='1' parentid='main' tag='STRONG' /&gt;" Guid="423b4d37-82b6-4c00-a7c2-9964a2e97435" InformativeScreenshot="7335eb837ebfeb87c1d19b3e041ebb10.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Gold Rate in UAE Today - Live Gold Price in Dirhams (AED)' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
                           <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
-                              <uix:Target CvTextArea="389, 670, 92, 18" CvTextArgument="24kt Price" CvType="Text" DesignTimeRectangle="391, 667, 90, 24" ElementType="Text" FriendlyName="'24kt Price'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;ul&amp;gt;li&amp;gt;p&amp;gt;span&amp;gt;strong' idx='2' isleaf='1' parentid='main' tag='STRONG' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='' isleaf='1' parentid='main' tag='STRONG' aaname='24kt Price' check:innerText='24kt Price' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF4AAAAcCAYAAADoQggJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAARsSURBVGhD7ZjbayJJFMb3b58HYZRxBwkSZJMwDmbMhMjkgg5K3IgwEnSSkEwuJA9BEpHdTDYNhoyi4Ztzuk5p3+yYuNJ56A/qoavrcs6vqs6p7j8QKhCF4ANSCD4gheADUgg+IIXgA1IIPiCF4AOSJ/j+P/vILWURiaXx5i2Vd1mkNg5x8ygN/NSqIsH95qtoS5XSIdI8lqt+eu2tiJ2OEkmuY7lygbtJ7NbqHmM5Qf1jOZT/b0MtcoHvHBQQZXCJHHKVfdS/N5BfWVXOpKq48nPinuC+F8enBH+0Rm1XDuXJXwp8FmnTXim1KpYXssqW5DZOu9L4KRkNpNj/2CryTambgezgH8/wmcG9L+KoJ3WmBrgqKviL9Qepc6qD+qcM9S0g/YHGmAp8G/l5avss8ATKNXAPFxsKfvzrMyj2Ouh0B/IwG9nBnxURISOTlVupsIhCSJzBrR1LhVW0MCVemAw+nw0UiKnAS9upwZO03alvuJGq16DJk+vlDqLkQOTLmVSMZIYnepcoXZvPzwJ/08Ain7IknbJ7CjG0Q4e5xVISpfHL5Qu+TTnHNq+yI/F3G/1mA+kUnVJ+H9tC3TzlctreFrBnttfqof19G6k5aU8lMreFzR//ynuRcYHySs6WHxdL7jwzIfgBLvPqyLpCjY7rHxsUbJQmBm9I3wQ5SdBZnatj1Ctb5kK+Wdgexuyj1rgQ5w++bZ5E64bRdqzSJYDyQqmh5vhxjV/mey/wD5RzJF/MF5CvsU2S+zgJ66PU/oak5Ac9bvXrusqZHxq2EzcZeL6pCDRbcn28Rj5F9RTXNTjWROD1gjn6mtK79KWh5vEBHaOJPXaax7HNIXZQMt689IrjHuCbOypcWTaXVr+nk+EtygvUJraOmtOfEw7hFIZPRvM9DV6HAs7yLauhHXKYj52z/mnwl//tD6HXDQ/nXwTeu8QzVZza5hA7CKLa4U65wZ9+YT85f0mFl4xdJHlcT5vVnNYw7Q/eCr1pu+a44rpVvuCHJYP0gSHvHHrhjt88v8WdoYuBX55XX7Fj7NhO8A+ofeRn2sl+V1K5mFgX3VUsc44H7wOdY77fLrMX7YA4nNzB6ZUem+LjT/OlXdOGGl/NCLxcPuJ5SqTDxXeU+xFHb/CtXaTGQhd1De/BqVQz1JcBm88d9M0O4rA+CfoL1+uj7FWBnzDUdGkzPcNmN/jWKDNvXjhTyWTyDTWWeh2uomSsbaZXBp7DiJmkXcl1gLuft7Kx6GTwhnPlQqX+vd6ASnbwGjpl/OXq4fAqZyvnjnurhyYFP/rwcuYK+oL+k50gOyr7KK/lsFjz+KgTzRz88CLB9hdRNlnsImf+ksjSSZCooG9qZHdyY1fx4l8XS+oqmj4YE2rM/yM8uG+xGuStycGztFOcbEf7qXOyjcQ7NWdkbp0+VMYkYtLswbP4A6qIJG8I7h/LIPpXAeVzh133TVRpo0TFdm4XX6LFcrQbn1xDzVQh+IAUgg9IIfiAFIIPSCH4QAT8BnaqG3XnAziaAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, CV" />
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CvTextArea="389, 670, 92, 18" CvTextArgument="24kt Price" CvType="Text" DesignTimeRectangle="391, 667, 90, 24" ElementType="Text" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;ul&amp;gt;li&amp;gt;p&amp;gt;span&amp;gt;strong' idx='2' isleaf='1' parentid='main' tag='STRONG' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='' isleaf='1' parentid='main' tag='STRONG' aaname='24kt Price' check:innerText='24kt Price' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF4AAAAcCAYAAADoQggJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAARsSURBVGhD7ZjbayJJFMb3b58HYZRxBwkSZJMwDmbMhMjkgg5K3IgwEnSSkEwuJA9BEpHdTDYNhoyi4Ztzuk5p3+yYuNJ56A/qoavrcs6vqs6p7j8QKhCF4ANSCD4gheADUgg+IIXgA1IIPiCF4AOSJ/j+P/vILWURiaXx5i2Vd1mkNg5x8ygN/NSqIsH95qtoS5XSIdI8lqt+eu2tiJ2OEkmuY7lygbtJ7NbqHmM5Qf1jOZT/b0MtcoHvHBQQZXCJHHKVfdS/N5BfWVXOpKq48nPinuC+F8enBH+0Rm1XDuXJXwp8FmnTXim1KpYXssqW5DZOu9L4KRkNpNj/2CryTambgezgH8/wmcG9L+KoJ3WmBrgqKviL9Qepc6qD+qcM9S0g/YHGmAp8G/l5avss8ATKNXAPFxsKfvzrMyj2Ouh0B/IwG9nBnxURISOTlVupsIhCSJzBrR1LhVW0MCVemAw+nw0UiKnAS9upwZO03alvuJGq16DJk+vlDqLkQOTLmVSMZIYnepcoXZvPzwJ/08Ain7IknbJ7CjG0Q4e5xVISpfHL5Qu+TTnHNq+yI/F3G/1mA+kUnVJ+H9tC3TzlctreFrBnttfqof19G6k5aU8lMreFzR//ynuRcYHySs6WHxdL7jwzIfgBLvPqyLpCjY7rHxsUbJQmBm9I3wQ5SdBZnatj1Ctb5kK+Wdgexuyj1rgQ5w++bZ5E64bRdqzSJYDyQqmh5vhxjV/mey/wD5RzJF/MF5CvsU2S+zgJ66PU/oak5Ac9bvXrusqZHxq2EzcZeL6pCDRbcn28Rj5F9RTXNTjWROD1gjn6mtK79KWh5vEBHaOJPXaax7HNIXZQMt689IrjHuCbOypcWTaXVr+nk+EtygvUJraOmtOfEw7hFIZPRvM9DV6HAs7yLauhHXKYj52z/mnwl//tD6HXDQ/nXwTeu8QzVZza5hA7CKLa4U65wZ9+YT85f0mFl4xdJHlcT5vVnNYw7Q/eCr1pu+a44rpVvuCHJYP0gSHvHHrhjt88v8WdoYuBX55XX7Fj7NhO8A+ofeRn2sl+V1K5mFgX3VUsc44H7wOdY77fLrMX7YA4nNzB6ZUem+LjT/OlXdOGGl/NCLxcPuJ5SqTDxXeU+xFHb/CtXaTGQhd1De/BqVQz1JcBm88d9M0O4rA+CfoL1+uj7FWBnzDUdGkzPcNmN/jWKDNvXjhTyWTyDTWWeh2uomSsbaZXBp7DiJmkXcl1gLuft7Kx6GTwhnPlQqX+vd6ASnbwGjpl/OXq4fAqZyvnjnurhyYFP/rwcuYK+oL+k50gOyr7KK/lsFjz+KgTzRz88CLB9hdRNlnsImf+ksjSSZCooG9qZHdyY1fx4l8XS+oqmj4YE2rM/yM8uG+xGuStycGztFOcbEf7qXOyjcQ7NWdkbp0+VMYkYtLswbP4A6qIJG8I7h/LIPpXAeVzh133TVRpo0TFdm4XX6LFcrQbn1xDzVQh+IAUgg9IIfiAFIIPSCH4QAT8BnaqG3XnAziaAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, CV" />
                             </scg:List>
                           </uix:TargetAnchorable.Anchors>
                         </uix:TargetAnchorable>
@@ -562,7 +570,7 @@
                                       <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                                     </umab:SendMailX.Files>
                                     <umab:SendMailX.HtmlBodyFromFile>
-                                      <umabh:HtmlContentArgument FilePath=".data/HtmlContent0.html">
+                                      <umabh:HtmlContentArgument HtmlBody="{x:Null}" FilePath=".data/HtmlContent0.html">
                                         <umabh:HtmlContentArgument.RuntimeImages>
                                           <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
                                         </umabh:HtmlContentArgument.RuntimeImages>
@@ -634,7 +642,7 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dt_Gold_Rate_Site1]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='GOLD_DATA' ReferenceName='Column0'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="94700b88-4cc1-4400-99bf-03263cd386a4" Version="V3">
                     <uix:NExtractData.Target>
-                      <uix:TargetAnchorable DesignTimeRectangle="334, 734, 825, 121" DesignTimeScaleFactor="1.25" FriendlyName="'Gold Gold'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='moneyweb-leftPanel' tag='DIV' /&gt;" Guid="ad0061ed-2463-49ef-9f5b-9b9aa45fb455" InformativeScreenshot="42c38fe798bb066c4d3b8d4e67cc9877.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todays Gold Rate in Dubai, 18, 22 &amp;amp; 24 Carat Gold Price on 31st Dec 2023 - Goodreturns' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                      <uix:TargetAnchorable DesignTimeRectangle="334, 734, 825, 121" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='moneyweb-leftPanel' tag='DIV' /&gt;" Guid="ad0061ed-2463-49ef-9f5b-9b9aa45fb455" InformativeScreenshot="42c38fe798bb066c4d3b8d4e67cc9877.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Todays Gold Rate in Dubai, 18, 22 &amp;amp; 24 Carat Gold Price on 31st Dec 2023 - Goodreturns' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                     </uix:NExtractData.Target>
                   </uix:NExtractData>
                 </Sequence>
@@ -681,7 +689,7 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dt_Gold_Rate_Site2]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Gold_Data' ReferenceName='Column0'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='ul' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NExtractData_2" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="bcdccac9-bbab-4483-b2f1-385cbae07fa3" Version="V3">
                     <uix:NExtractData.Target>
-                      <uix:TargetAnchorable DesignTimeRectangle="115, 423, 1688, 372" DesignTimeScaleFactor="1.25" FriendlyName="'TODAY’S SUGGESTED'" FullSelectorArgument="&lt;webctrl class='tablesection' parentid='post-1442' tag='DIV' /&gt;" Guid="769cdbba-4e18-4d34-bfdc-c17dcada720c" InformativeScreenshot="29c87c7c8892dc138128349c4bdfd01b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Dubai City Of Gold' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                      <uix:TargetAnchorable DesignTimeRectangle="115, 423, 1688, 372" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl class='tablesection' parentid='post-1442' tag='DIV' /&gt;" Guid="769cdbba-4e18-4d34-bfdc-c17dcada720c" InformativeScreenshot="29c87c7c8892dc138128349c4bdfd01b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Dubai City Of Gold' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                     </uix:NExtractData.Target>
                   </uix:NExtractData>
                 </Sequence>
